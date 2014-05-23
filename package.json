@@ -1,0 +1,29 @@
+{
+  "name": "gulp-pd-tasks",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.6.2",
+    "gulp-autoprefixer": "0.0.7",
+    "gulp-changed": "^0.3.0",
+    "gulp-clean": "^0.2.4",
+    "gulp-ignore": "^1.1.0",
+    "gulp-imagemin": "^0.5.0",
+    "gulp-jade": "^0.5.0",
+    "gulp-js-include": "*",
+    "gulp-jshint": "^1.6.1",
+    "gulp-livereload": "^1.5.0",
+    "gulp-plumber": "^0.6.2",
+    "gulp-rename": "^1.2.0",
+    "gulp-ruby-sass": "^0.5.0",
+    "gulp-run-sequence": "^0.3.2",
+    "gulp-uglify": "^0.3.0",
+    "gulp-util": "^2.2.14",
+    "gulp-watch": "^0.6.5",
+    "jshint-stylish": "^0.2.0"
+  }
+}
