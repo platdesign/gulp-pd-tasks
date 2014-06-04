@@ -1,4 +1,4 @@
-var 
+var
 		gulp		= require('gulp')
 	,	gutil		= require('gulp-util')
 	,	path		= require('path')
@@ -37,7 +37,7 @@ tasks.jsDev = function(o) {
 	return function(cb) {
 
 		return gulp.src( src )
-			
+
 			.pipe( watch({glob:src}, function(files){
 
 				files
@@ -45,7 +45,7 @@ tasks.jsDev = function(o) {
 					.pipe( jshint.reporter(stylish) );
 
 				return gulp.src( src )
-					
+
 					.pipe( ignore.exclude('**/_*.js') )
 
 					.pipe( jsInclude() )
@@ -53,7 +53,7 @@ tasks.jsDev = function(o) {
 				.pipe( gulp.dest( dest ));
 
 			}) )
-			
+
 	}
 };
 
@@ -169,7 +169,8 @@ tasks.gfxDev = function(o) {
 		path.join( o.src, '**/*.png' ),
 		path.join( o.src, '**/*.jpg' ),
 		path.join( o.src, '**/*.gif' ),
-		path.join( o.src, '**/*.jpeg' )
+		path.join( o.src, '**/*.jpeg' ),
+		path.join( o.src, '**/*.svg' )
 	];
 	var dest = o.dest;
 
@@ -188,7 +189,8 @@ tasks.gfxBuild = function(o) {
 		path.join( o.src, '**/*.png' ),
 		path.join( o.src, '**/*.jpg' ),
 		path.join( o.src, '**/*.gif' ),
-		path.join( o.src, '**/*.jpeg' )
+		path.join( o.src, '**/*.jpeg' ),
+		path.join( o.src, '**/*.svg' )
 	];
 	var dest = o.dest;
 

@@ -7,7 +7,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "gulp": "^3.6.2",
+    "gulp": "~3.5.5",
     "gulp-autoprefixer": "0.0.7",
     "gulp-changed": "^0.3.0",
     "gulp-clean": "^0.2.4",
