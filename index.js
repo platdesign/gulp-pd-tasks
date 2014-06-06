@@ -80,6 +80,7 @@ tasks.jsBuild = function(o) {
 
 
 
+
 tasks.scssDev = function(o) {
 	o = o || {};
 
@@ -89,17 +90,23 @@ tasks.scssDev = function(o) {
 
 	return function(cb) {
 		return gulp.src( src )
-			.pipe( watch({ glob:src }) )
-			.pipe( plumber() )
-			.pipe( sass( {
-				precision:10
-			} ) )
-			.pipe( cssprefix('last 5 version', '> 1%', "ie 8", "ie 7") )
-			.pipe( gulp.dest( dest ) )
-			.pipe( livereload() )
+			.pipe( watch({ glob:src }, function(){
+
+				gulp.src( src )
+				.pipe( plumber() )
+				.pipe( sass( {
+					precision:10
+				} ) )
+				.pipe( cssprefix('last 5 version', '> 1%', "ie 8", "ie 7") )
+				.pipe( gulp.dest( dest ) )
+				.pipe( livereload() );
+
+			}) )
+
 		;
 	};
 };
+
 
 tasks.scssBuild = function(o) {
 	o = o || {};
