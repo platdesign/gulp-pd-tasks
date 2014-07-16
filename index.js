@@ -228,9 +228,104 @@ tasks.clean = function(o) {
 
 
 
+tasks.devTasks = [];
+tasks.buildTasks = [];
+
+tasks.addAssetDir = function(path) {
+
+	//	JS-DEV
+	gulp.task( name + '-js-dev', tasks.jsDev({
+		src: 	path 	+ '/js-src',
+		dest: 	path 	+ '/js'
+	}));
+
+	tasks.devTasks.push( name + '-js-dev' );
+
+
+	//	JS-BUILD
+	gulp.task( name + '-js-build', tasks.jsBuild({
+		src: 	path 	+ '/js-src',
+		dest: 	path 	+ '/js'
+	}));
+
+	tasks.buildTasks.push( name + '-js-build' );
 
 
 
+
+
+
+
+	//	SCSS-DEV
+	gulp.task( name + '-scss-dev', tasks.scssDev({
+		src: 	path 	+ '/scss',
+		dest: 	path 	+ '/css'
+	}));
+
+	tasks.devTasks.push( name + '-scss-dev' );
+
+
+	//	SCSS-BUILD
+	gulp.task( name + '-scss-build', tasks.scssBuild({
+		src: 	path 	+ '/scss',
+		dest: 	path 	+ '/css'
+	}));
+
+	tasks.buildTasks.push( name + '-scss-build' );
+
+
+
+
+
+
+
+
+	//	JADE-DEV
+	gulp.task( name + '-jade-dev', tasks.jadeDev({
+		src: 	path 	+ '/jade',
+		dest: 	path 	+ '/html'
+	}));
+
+	tasks.devTasks.push( name + '-jade-dev' );
+
+
+
+	//	JADE-BUILD
+	gulp.task( name + '-jade-build', tasks.jadeBuild({
+		src: 	path 	+ '/jade',
+		dest: 	path 	+ '/html'
+	}));
+
+	tasks.buildTasks.push( name + '-jade-build' );
+
+
+
+
+
+
+
+
+
+	//	GFX-DEV
+	gulp.task( name + '-gfx-dev', tasks.gfxDev({
+		src: 	path 	+ '/gfx-src',
+		dest: 	path 	+ '/gfx'
+	}));
+
+	tasks.devTasks.push( name + '-gfx-dev' );
+
+
+
+
+	//	GFX-BUILD
+	gulp.task( name + '-gfx-build', tasks.gfxBuild({
+		src: 	path 	+ '/gfx-src',
+		dest: 	path 	+ '/gfx'
+	}));
+
+	tasks.buildTasks.push( name + '-gfx-build' );
+
+}
 
 
 
